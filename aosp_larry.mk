@@ -10,13 +10,19 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common LineageOS stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit from larry device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+# Boot Animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_larry
+PRODUCT_NAME := aosp_larry
 PRODUCT_DEVICE := larry
 PRODUCT_BRAND := oneplus
 PRODUCT_MODEL := CPH2467
